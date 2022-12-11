@@ -548,6 +548,7 @@ blockquote {
 #logseq-tabs_lsp_main {
   top: 12px !important;
   z-index: 9999 !important;
+  left: var(--ls-left-sidebar-width) !important;
 }
 
 #main-content-container {
