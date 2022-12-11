@@ -60,15 +60,6 @@
     background-color: transparent;
 }
 
-// 调整活动标签颜色
-.light .logseq-tab[data-active=false] {
-    background-color: transparent;
-}
-
-.light .logseq-tab[data-active=true] {
-    background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
-}
-
 //调整标签位置
 #logseq-tabs_lsp_main {
     top: 12px !important;
