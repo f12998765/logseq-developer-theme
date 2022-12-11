@@ -16,7 +16,7 @@
         ]
     },
     "config": {
-        "localPath": "C:\\Users\\hi\\LocalStation\\BLOG\\docs"
+        "localPath": "."
     },
     "scripts": {
         "dev:win": "sass --watch --no-source-map --style expanded ./scss/main.scss %npm_package_config_localPath%/logseq/custom.css",
