@@ -53,3 +53,28 @@
 .cp__header-logo, .fade-link:hover {
     color: gray;
 }
+
+// 隐藏导航下底线
+.cp__header::after,
+.cp__right-sidebar-topbar::after {
+    background-color: transparent;
+}
+
+// 调整活动标签颜色
+.light .logseq-tab[data-active=false] {
+    background-color: transparent;
+}
+
+.light .logseq-tab[data-active=true] {
+    background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}
+
+//调整标签位置
+#logseq-tabs_lsp_main {
+    top: 12px !important;
+    z-index: 9999 !important;
+}
+
+#main-content-container {
+    padding-top: 0.5rem;
+}
