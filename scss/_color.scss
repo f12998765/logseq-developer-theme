@@ -19,12 +19,12 @@ html[data-theme=light] {
     --ls-secondary-background-color: #F0F0F0;
     
     --ls-primary-theme-color: #000;
-    --ls-secondary-theme-color: rgb(224, 80, 27);
+    --ls-secondary-theme-color: #3c7bdb;
     --ls-third-theme-color: gray;
 
-    --ls-code-color: #fff;
-    --ls-code-background-color: #272c35 ;
-    --ls-code-selected-background-color: #32445A;
+    --ls-code-color: gray;
+    --ls-code-background-color: rgb(250, 250, 250) ;
+    --ls-code-selected-background-color: #C0E6FD;
 }
 
 .dark-theme, .white-theme, 
