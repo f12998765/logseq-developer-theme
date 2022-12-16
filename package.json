@@ -1,7 +1,9 @@
 {
     "name": "logseq-developer-theme",
+    "version": "v0.4.1",
     "description": "https://docs.unickcheng.cc/#/page/logseq-developer-theme",
     "author": "UNICKCHENG",
+    "repo": "UNICKCHENG/logseq-developer-theme",
     "license": "MIT",
     "logseq": {
         "themes": [
@@ -13,11 +15,11 @@
             "name": "Developer Theme Like docs.unickcheng.cc",
             "url": "./export.css"
           }
-        ]
+        ],
+        "id": "logseq-developer-theme"
     },
     "config": {
-        "localPath": "."
-    },
+        "localPath": "."    },
     "scripts": {
         "dev:win": "sass --watch --no-source-map --style expanded ./scss/main.scss %npm_package_config_localPath%/logseq/custom.css",
         "dev": "sass --watch --no-source-map --style expanded ./scss/main.scss $npm_package_config_localPath/logseq/custom.css",
