@@ -7,38 +7,12 @@ on:
       - 'scss/*'
   workflow_dispatch:
 
-env:
-  THEME_NAME: "logseq-developer-theme"
-
 jobs:
+  build:
+    uses: ./.github/workflows/build-css.yml
 
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Get node_modules From Cache
-        id: get-modules
-        uses: actions/cache@v3
-        with: 
-          path: ${{ github.workspace }}/node_modules
-          key: node-modules-${{ hashFiles('**/package.json') }}
-          restore-keys: node-modules-
-      - name: Setup Node.js Environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      - run: npm ci
-      - name: Build CSS
-        run: |
-          npm run build
-          npm run build:expanded
-          npm run build:web
-      # https://github.com/JamesIves/github-pages-deploy-action
-      - name: Deploy to release branch
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: release
-          folder: css
-          clean: true
+  release:
+    needs: [build]
+    if: startsWith(github.ref, 'refs/tags/')
+    uses: ./.github/workflows/release-package.yml
+
