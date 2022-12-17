@@ -2,93 +2,111 @@
 // 右上角设置按钮滚动条隐藏
 .scrollbar-spacing::-webkit-scrollbar,
 .menu-links-wrapper::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
+
 .scrollbar-spacing,
 .menu-links-wrapper {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
-    overflow-x: hidden;
-    overflow-y: auto;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 // 右上角设置操作
 .dropdown-wrapper {
-    border: none !important;
+  border: none !important;
 }
+
 .menu-links-wrapper {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
+    0 4px 6px -2px rgba(0, 0, 0, 0.5);
 }
+
 .menu-links-wrapper .menu-separator {
-    display: none;
+  display: none;
 }
 
 // 右侧页面效果
-.sidebar-item-list .page-properties, .sidebar-item-list .block-properties {
-    background-color: var(--ls-secondary-background-color);
+.sidebar-item-list .page-properties,
+.sidebar-item-list .block-properties {
+  background-color: var(--ls-secondary-background-color);
 }
 
 // === 外部和内部链接样式 ===
 
 // 正文区域
 .page-reference {
-    &:hover {
-        background-color: transparent;
-    }
-    .page-ref:hover {
-        color: var(--ls-custom-theme-color);
-    }
+  &:hover {
+    background-color: transparent;
+  }
+
+  .page-ref:hover {
+    color: var(--ls-custom-theme-color);
+  }
 }
+
 a.external-link {
-    color: var(--ls-custom-theme-color) !important;
+  color: var(--ls-custom-theme-color) !important;
 }
 
 // 页面属性
 .block-properties.page-properties {
-    .page-property-key {
-        color: var(--ls-primary-theme-color);
-        &:hover {
-            background-color: transparent;
-            color: var(--ls-custom-theme-color);
-        }
+  .page-property-key {
+    color: var(--ls-primary-theme-color);
+
+    &:hover {
+      background-color: transparent;
+      color: var(--ls-custom-theme-color);
     }
-    .page-ref {
-        color: var(--ls-primary-theme-color);
-        &:hover {
-            background-color: transparent;
-            color: var(--ls-custom-theme-color);
-        }
+  }
+
+  .page-ref {
+    color: var(--ls-primary-theme-color);
+
+    &:hover {
+      background-color: transparent;
+      color: var(--ls-custom-theme-color);
     }
-// timetracking 样式
-.cp__header-logo, .fade-link {
-    color: var(--ls-secondary-background-color);
+  }
 }
-.cp__header-logo, .fade-link:hover {
-    color: var(--ls-third-theme-color);
+// timetracking 样式
+.cp__header-logo,
+.fade-link {
+  color: var(--ls-secondary-background-color);
 }
 
-// https://github.com/pengx17/logseq-dev-theme/issues/77 
+.cp__header-logo,
+.fade-link:hover {
+  color: var(--ls-third-theme-color);
+}
+
+// https://github.com/pengx17/logseq-dev-theme/issues/77
 // update the style between content, time cost and scheduled date when references
 .block-ref a.fade-link,
 .block-ref .timestamp-label {
-    display: none ;
+  display: none;
 }
+
 .block-ref .timestamp .opacity-80 {
-    font-size: 75%;
+  font-size: 75%;
 }
+
 // 隐藏导航下底线
 .cp__header::after,
 .cp__right-sidebar-topbar::after {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 //调整标签位置
 #logseq-tabs_lsp_main {
-    top: 12px !important;
-    z-index: 9999 !important;
-    left: var(--ls-left-sidebar-width) !important;
+  top: 12px !important;
+  z-index: 9999 !important;
+  left: var(--ls-left-sidebar-width) !important;
 }
 
 #main-content-container {
-    padding-top: 0.5rem;
+  padding-top: 0.5rem;
 }
