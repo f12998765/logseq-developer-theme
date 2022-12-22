@@ -1,11 +1,14 @@
 // 主区域滚动条隐藏
 // 右上角设置按钮滚动条隐藏
-.scrollbar-spacing::-webkit-scrollbar,
+body[data-page="all-journals"] #main-content-container::-webkit-scrollbar,
+body[data-page="home"] #main-content-container::-webkit-scrollbar,
+body[data-page="page"] #main-content-container::-webkit-scrollbar,
 .menu-links-wrapper::-webkit-scrollbar {
   display: none;
 }
-
-.scrollbar-spacing,
+body[data-page="all-journals"] #main-content-container
+body[data-page="home"] #main-content-container,
+body[data-page="page"] #main-content-container,
 .menu-links-wrapper {
   scrollbar-width: none;
   /* Firefox */
@@ -13,6 +16,16 @@
   /* IE 10+ */
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+// setting shortcut page and other
+#main-content-container {
+    &::-webkit-scrollbar {
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        @include bordeRadius();
+    }
 }
 
 // 右上角设置操作
@@ -34,6 +47,10 @@
 .sidebar-item-list .block-properties {
   background-color: var(--ls-secondary-background-color);
 }
+// fix: The right page command overflows the page 
+#right-sidebar-container .editor-inner .absolute[data-modal-name="commands"] {
+    left: 0px;
+}
 
 // === 外部和内部链接样式 ===
 
@@ -52,14 +69,15 @@ a.external-link {
   color: var(--ls-custom-theme-color) !important;
 }
 
-// 页面属性
-.block-properties.page-properties {
-  .page-property-key {
-    color: var(--ls-primary-theme-color);
-
-    &:hover {
-      background-color: transparent;
-      color: var(--ls-custom-theme-color);
+// 页面属性, 单个 rem 属性
+.block-properties.page-properties,
+.block-children {
+    .page-property-key {
+        color: var(--ls-primary-theme-color);
+        &:hover {
+            background-color: transparent;
+            color: var(--ls-custom-theme-color);
+        }
     }
   }
 
@@ -70,28 +88,28 @@ a.external-link {
       background-color: transparent;
       color: var(--ls-custom-theme-color);
     }
-  }
-}
-// timetracking 样式
-.cp__header-logo,
-.fade-link {
-  color: var(--ls-secondary-background-color);
 }
 
-.cp__header-logo,
-.fade-link:hover {
-  color: var(--ls-third-theme-color);
-}
+// Slash (/), Block content (<), Page reference ([[), Block reference ((()
+.editor-inner .absolute[data-modal-name="commands"],
+.editor-inner .absolute[data-modal-name="block-commands"],
+.editor-inner .absolute[data-modal-name="page-search"],
+.editor-inner .absolute[data-modal-name="block-search"]  {
+    .ui__ac-group-name {
+        color: var(--ls-custom-theme-color);
+    }
 
-// https://github.com/pengx17/logseq-dev-theme/issues/77
-// update the style between content, time cost and scheduled date when references
-.block-ref a.fade-link,
-.block-ref .timestamp-label {
-  display: none;
-}
+    #ui__ac-inner div  > a.chosen {
+        background-color: var(--ls-secondary-background-color);
+    }
 
-.block-ref .timestamp .opacity-80 {
-  font-size: 75%;
+    &::-webkit-scrollbar {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @include bordeRadius();
+    }
 }
 
 // 隐藏导航下底线
