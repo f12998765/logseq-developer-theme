@@ -82,7 +82,7 @@ a.external-link {
   }
 
   .page-ref {
-    color: var(--ls-primary-theme-color);
+    color: var(--ls-link-ref-text-color) !important;
 
     &:hover {
       background-color: transparent;
