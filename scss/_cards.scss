@@ -1,0 +1,51 @@
+/* cards */
+// created: 2022-12-26
+
+div[data-refs-self*='"card"'] {
+    border-radius: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    box-shadow: none;
+}
+
+.cards-review {
+    .cp__select-input {
+        height: 1px;
+        &:is(:active, :hover, :focus) {
+            border-color: var(--ls-custom-theme-color);
+        }
+    }
+
+    .cards-title {
+        background-color: var(--ls-secondary-background-color);
+    }
+}
+
+// button
+.cards-review .ls-card {
+    button {
+        background-color: var(--ls-secondary-background-color);
+        color: var(--ls-primary-text-color);
+        opacity: 0.8;
+
+        &:is(:visited, :focus) {
+            border: none;
+        }
+        &:hover {
+            opacity: 1;
+            font-weight: 600;
+        }
+    }
+    .keyboard-shortcut code {
+        color: var(--ls-custom-theme-color);
+        background-color: transparent;
+        box-shadow: none;
+        &::before {
+            content: "(";
+        }
+        &::after {
+            content: ")";
+        }
+    }
+}

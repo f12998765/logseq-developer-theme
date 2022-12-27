@@ -1,26 +1,16 @@
-@charset "UTF-8";
 
 $IS_WEB: true;
 
-// https://github.com/pengx17/logseq-dev-theme
-@import url("https://cdn.jsdelivr.net/gh/pengx17/logseq-dev-theme@latest/custom.css");
-@import url("https://raw.githubusercontent.com/pengx17/logseq-dev-theme/main/custom.css");
+@import "./global";
 
-@import "./fonts";
-@import "./color";
-@import "./toggle";
+:root {
+    --ls-font-family: common-font, code-font, ui-font, system-ui;
+    --ct-code-font-family: code-font, common-font, ui-font, system-ui !important;
+}
 
-@import "./left-sidebar";
-@import "./search";
-@import "./bullet";
-
-@import "./code";
-@import "./checkbox";
-@import "./tag";
-@import "./embed";
-@import "./graph";
-@import "./query";
-@import "./pdf";
-
-@import "./other";
-@import "./pages";
+.dark-theme,
+html[data-theme=dark] {
+    --ls-primary-background-color: #292C3D;
+    --ls-secondary-background-color: #2F3344;
+    --ls-code-background-color: #333749;
+}
